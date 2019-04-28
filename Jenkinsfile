@@ -11,7 +11,7 @@ pipeline {
 	                  sh 'make lint'
                 }
         }
-        stage("test") {
+        stage('Test') {
              steps {
                sh 'make test_xunit || true'
                xunit thresholds: [
@@ -25,5 +25,5 @@ pipeline {
                              skipNoTestFiles: false,
                              stopProcessingIfError: true)
                    ]
-             }
+         }
 }
